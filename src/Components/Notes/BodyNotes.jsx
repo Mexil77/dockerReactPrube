@@ -1,8 +1,8 @@
 import React from "react";
 
-import Card from "./Card";
+import Card from "../Common/Card";
 
-export default function BodyNotes({ data, user }) {
+export default function BodyNotes({ data, user, deleteNote }) {
 	return (
 		<div
 			style={{
@@ -22,6 +22,7 @@ export default function BodyNotes({ data, user }) {
 							userId={d.userId}
 							title={d.title}
 							body={d.body}
+							deleteNote={deleteNote}
 						/>
 					);
 				})}

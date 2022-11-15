@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 
-export default function MyForm({ data, setData }) {
-	const [title, setTitle] = React.useState("");
-	const [body, setBody] = React.useState("");
+export default function NoteForm({ data, setData }) {
+	const [title, setTitle] = useState("");
+	const [body, setBody] = useState("");
 
 	return (
 		<div

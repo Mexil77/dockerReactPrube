@@ -1,0 +1,27 @@
+.btn {
+	padding: 5px;
+	border: 0;
+	border-radius: 10px;
+	background-color: #7209b7;
+	font-weight: bolder;
+	font-size: medium;
+	color: #4cc9f0;
+	transition: background-color 0.5s;
+}
+
+.btn:hover {
+	background-color: #f72585;
+}
+
+.btn-primary {
+	background-color: #0275d8;
+}
+.btn-primary:hover {
+	background-color: #7209b7;
+}
+.btn-danger {
+	background-color: #d9534f;
+}
+.btn-danger:hover {
+	background-color: #7209b7;
+}

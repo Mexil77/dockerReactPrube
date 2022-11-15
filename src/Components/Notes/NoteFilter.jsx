@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function MyHeader({ userNote, setUser }) {
+export default function NoteFilter({ userNote, setUser }) {
 	return (
 		<div
 			style={{
@@ -20,7 +20,7 @@ export default function MyHeader({ userNote, setUser }) {
 			<h1>User: {userNote}</h1>
 			<button
 				onClick={() => {
-					userNote < 11 ? setUser(userNote + 1) : ""; //Forma Recomendable
+					userNote < 11 ? setUser(userNote + 1) : <></>; //Forma Recomendable
 				}}
 			>
 				+
@@ -28,11 +28,3 @@ export default function MyHeader({ userNote, setUser }) {
 		</div>
 	);
 }
-
-/* 
-props: {
-	userNote: 1,2,3,4...
-	setUser: function setUser(){},
-	name: 'hola',
-}
-*/

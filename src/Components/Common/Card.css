@@ -1,0 +1,16 @@
+.noteCard {
+	background-color: #ffc;
+	width: 20rem;
+	display: flex;
+	flex-direction: column;
+	border-radius: 30px;
+	padding: 20px;
+	margin: 20px;
+	color: #000;
+	transition: all 0.5s;
+}
+
+.noteCard:hover {
+	width: 21rem;
+	box-shadow: 10px 10px 20px 1px #000;
+}
