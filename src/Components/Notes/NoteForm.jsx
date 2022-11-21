@@ -1,9 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
+import { Form, redirect } from "react-router-dom";
 
-export default function NoteForm({ data, setData }) {
-	const [title, setTitle] = useState("");
-	const [body, setBody] = useState("");
+import { saveNote } from "../../RouteActions/Note";
 
+export async function notesAction({ request }) {
+	const formData = await request.formData();
+	console.log(formData);
+	await saveNote({
+		title: formData.get("title"),
+		body: formData.get("body"),
+	});
+	return redirect("/notes");
+}
+
+export default function NoteForm() {
 	return (
 		<div
 			style={{
@@ -15,43 +25,14 @@ export default function NoteForm({ data, setData }) {
 			}}
 		>
 			<h3 style={{ margin: 0 }}>Ingresa una Nota</h3>
-			<form
-				action=""
+			<Form
+				method="post"
 				style={{ display: "flex", flexDirection: "column", width: "50%" }}
 			>
-				<input
-					type="text"
-					placeholder="Titulo"
-					value={title}
-					onChange={(e) => {
-						setTitle(e.target.value);
-					}}
-				/>
-				<input
-					type="text"
-					placeholder="Descripcion"
-					value={body}
-					onChange={(e) => setBody(e.target.value)}
-				/>
-				<button
-					onClick={(e) => {
-						e.preventDefault();
-						setData([
-							...data,
-							{
-								userId: 11,
-								id: data.length + 1,
-								title,
-								body,
-							},
-						]);
-						setTitle("");
-						setBody("");
-					}}
-				>
-					Add
-				</button>
-			</form>
+				<input type="text" placeholder="Titulo" name="title" />
+				<input type="text" placeholder="Descripcion" name="body" />
+				<button type="submit">Add</button>
+			</Form>
 		</div>
 	);
 }

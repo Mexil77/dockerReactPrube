@@ -2,7 +2,7 @@ import React from "react";
 
 import Card from "../Common/Card";
 
-export default function BodyNotes({ data, user, deleteNote }) {
+export default function BodyNotes({ data }) {
 	return (
 		<div
 			style={{
@@ -12,20 +12,17 @@ export default function BodyNotes({ data, user, deleteNote }) {
 				justifyContent: "center",
 			}}
 		>
-			{data
-				.filter((d) => d.userId === user)
-				.map((d) => {
-					return (
-						<Card
-							key={d.id}
-							id={d.id}
-							userId={d.userId}
-							title={d.title}
-							body={d.body}
-							deleteNote={deleteNote}
-						/>
-					);
-				})}
+			{data.map((d) => {
+				return (
+					<Card
+						key={d._id}
+						id={d._id}
+						userId={d.userId}
+						title={d.title}
+						body={d.body}
+					/>
+				);
+			})}
 		</div>
 	);
 }

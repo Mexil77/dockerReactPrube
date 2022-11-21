@@ -1,19 +1,28 @@
 import axios from "axios";
 
 export async function getNotes() {
-	let res = await axios.get("https://jsonplaceholder.typicode.com/posts");
+	let res = await axios.get("http://localhost:5000/api/notes/", {
+		params: {
+			userId: process.env.REACT_APP_USERID,
+		},
+	});
 	return res.data;
 }
 
+export async function saveNote({ title, body }) {
+	await axios.post(process.env.REACT_APP_RESAPIURI, {
+		userId: process.env.REACT_APP_USERID,
+		title,
+		body,
+	});
+}
+
 export async function getNote(idNote) {
-	let res = await axios.get("https://jsonplaceholder.typicode.com/posts");
-	let note = res.data.find((n) => n.id === Number(idNote));
+	let res = await axios.get(`http://localhost:5000/api/notes/${idNote}`);
+	let note = res.data;
 	return note;
 }
 
 export async function deleteNote(idNote) {
-	let res = await axios.get("https://jsonplaceholder.typicode.com/posts");
-	let newNotes = res.data.filter((n) => n.id !== Number(idNote));
-	console.log(newNotes);
-	return newNotes;
+	await axios.delete(`http://localhost:5000/api/notes/${idNote}`);
 }
