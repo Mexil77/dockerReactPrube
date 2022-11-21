@@ -1,11 +1,10 @@
 import React from "react";
 import { Form, redirect } from "react-router-dom";
 
-import { saveNote } from "../../RouteActions/Note";
+import { saveNote, updateNote } from "../../RouteActions/Note";
 
-export async function notesAction({ request }) {
+export async function formSaveAction({ request }) {
 	const formData = await request.formData();
-	console.log(formData);
 	await saveNote({
 		title: formData.get("title"),
 		body: formData.get("body"),
@@ -13,7 +12,17 @@ export async function notesAction({ request }) {
 	return redirect("/notes");
 }
 
-export default function NoteForm() {
+export async function formUpdateAction({ request, params }) {
+	const formData = await request.formData();
+	await updateNote({
+		idNote: params.idNote,
+		title: formData.get("title"),
+		body: formData.get("body"),
+	});
+	return redirect("/notes");
+}
+
+export default function NoteForm({ id }) {
 	return (
 		<div
 			style={{
@@ -31,7 +40,7 @@ export default function NoteForm() {
 			>
 				<input type="text" placeholder="Titulo" name="title" />
 				<input type="text" placeholder="Descripcion" name="body" />
-				<button type="submit">Add</button>
+				<button type="submit">{id ? "Edit" : "Add"}</button>
 			</Form>
 		</div>
 	);
