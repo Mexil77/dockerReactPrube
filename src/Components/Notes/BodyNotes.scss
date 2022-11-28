@@ -20,3 +20,15 @@
 	flex-wrap: wrap;
 	justify-content: flex-start;
 }
+
+@media (max-width: 480px) {
+	.bodyNotes {
+		height: auto;
+	}
+
+	.bodyNotes_Notes {
+		width: 100%;
+		flex-direction: column;
+		align-items: center;
+	}
+}

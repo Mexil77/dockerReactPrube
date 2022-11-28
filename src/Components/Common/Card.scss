@@ -16,3 +16,10 @@
 .noteCard:hover {
 	box-shadow: 5px 5px 5px 1px $color-blue;
 }
+
+@media (max-width: 480px) {
+	.noteCard {
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+}

@@ -2,6 +2,8 @@ import React from "react";
 import { getNote } from "../../RouteActions/Note";
 import { useLoaderData } from "react-router-dom";
 
+import "./EditNote.scss";
+
 import Card from "../Common/Card";
 import NoteForm from "./NoteForm";
 import HeaderXButton from "Components/Common/HeaderXButton";
@@ -14,7 +16,7 @@ export default function EditNote() {
 	const note = useLoaderData();
 	const { _id, title, body } = note;
 	return (
-		<div style={{ display: "flex", flexDirection: "column" }}>
+		<div className="EditNote">
 			<HeaderXButton />
 			<NoteForm id={_id} />
 			<Card key={_id} id={_id} title={title} body={body} />

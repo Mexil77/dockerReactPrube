@@ -1,3 +1,9 @@
 .Notes {
 	display: flex;
 }
+
+@media (max-width: 480px) {
+	.Notes {
+		flex-direction: column-reverse;
+	}
+}
