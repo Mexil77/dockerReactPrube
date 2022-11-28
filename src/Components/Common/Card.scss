@@ -1,16 +1,18 @@
+@import "Styles/Colors.scss";
+
 .noteCard {
 	background-color: #ffc;
-	width: 20rem;
+	width: 15rem;
 	display: flex;
 	flex-direction: column;
 	border-radius: 30px;
 	padding: 20px;
 	margin: 20px;
 	color: #000;
+	border: solid #e7e7e7 0.5px;
 	transition: all 0.5s;
 }
 
 .noteCard:hover {
-	width: 21rem;
-	box-shadow: 10px 10px 20px 1px #000;
+	box-shadow: 5px 5px 5px 1px $color-blue;
 }

@@ -1,7 +1,8 @@
 import React from "react";
-import { Outlet, useLoaderData, Link } from "react-router-dom";
+import { Outlet, useLoaderData } from "react-router-dom";
 
-// import NoteForm from "./NoteForm";
+import "./Notes.scss";
+
 import BodyNotes from "./BodyNotes";
 
 import { deleteNote, getNotes } from "../../RouteActions/Note";
@@ -14,16 +15,9 @@ export default function Notes() {
 	const notes = useLoaderData();
 
 	return (
-		<>
-			<div style={{ display: "flex", width: "100%" }}>
-				<Link to="/notes/addNote" className="btn btn-primary">
-					+
-				</Link>
-			</div>
-			<div style={{ display: "flex" }}>
-				<BodyNotes data={notes} deleteNote={deleteNote} />
-				<Outlet />
-			</div>
-		</>
+		<div className="Notes">
+			<BodyNotes data={notes} deleteNote={deleteNote} />
+			<Outlet />
+		</div>
 	);
 }

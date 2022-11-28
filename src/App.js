@@ -1,17 +1,15 @@
 import "./App.css";
 import React from "react";
 
-import "./Styles/Button.css";
+import "./Styles/Button.scss";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Root from "./Components/Root/Root";
 import Landing from "./Components/Landing/Landing";
 import Notes, { notesLoader } from "./Components/Notes/Notes";
-import NoteForm, {
-	formSaveAction,
-	formUpdateAction,
-} from "./Components/Notes/NoteForm";
+import { formSaveAction, formUpdateAction } from "./Components/Notes/NoteForm";
+import AddNote from "Components/Notes/AddNote";
 import EditNote, { noteLoader } from "./Components/Notes/EditNote";
 import ShowNote, { noteAction } from "./Components/Notes/ShowNote";
 
@@ -32,7 +30,7 @@ function App() {
 					children: [
 						{
 							path: "addNote",
-							element: <NoteForm />,
+							element: <AddNote />,
 							action: formSaveAction,
 						},
 						{

@@ -1,0 +1,21 @@
+.ShowNote {
+	display: flex;
+	flex-direction: column;
+	width: 40%;
+	height: 100vh;
+}
+
+.ShowNote_buttons {
+	display: flex;
+	width: 100%;
+	justify-content: space-around;
+}
+
+.ShowNote_buttons_button {
+	width: 25%;
+}
+
+.ShowNote_buttons_form > button {
+	height: 100%;
+	width: 100%;
+}

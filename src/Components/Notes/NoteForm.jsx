@@ -1,6 +1,8 @@
 import React from "react";
 import { Form, redirect } from "react-router-dom";
 
+import "./NoteForm.scss";
+
 import { saveNote, updateNote } from "../../RouteActions/Note";
 
 export async function formSaveAction({ request }) {
@@ -24,23 +26,14 @@ export async function formUpdateAction({ request, params }) {
 
 export default function NoteForm({ id }) {
 	return (
-		<div
-			style={{
-				display: "flex",
-				flexDirection: "column",
-				width: "50%",
-				backgroundColor: "#afafaf",
-				alignItems: "center",
-			}}
-		>
-			<h3 style={{ margin: 0 }}>Ingresa una Nota</h3>
-			<Form
-				method="post"
-				style={{ display: "flex", flexDirection: "column", width: "50%" }}
-			>
+		<div className="NoteForm">
+			<h3 className="NoteForm_title">{id ? "Edit" : "Add a"} Note</h3>
+			<Form method="post" className="NoteForm_form">
 				<input type="text" placeholder="Titulo" name="title" />
 				<input type="text" placeholder="Descripcion" name="body" />
-				<button type="submit">{id ? "Edit" : "Add"}</button>
+				<button type="submit" className="btn btn-primary">
+					{id ? "Edit" : "Add"}
+				</button>
 			</Form>
 		</div>
 	);

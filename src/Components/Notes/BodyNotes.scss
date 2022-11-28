@@ -1,0 +1,22 @@
+.bodyNotes {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	align-items: flex-start;
+	height: calc(100vh - 50px);
+	overflow-y: scroll;
+}
+
+.bodyNotes_addNoteLink {
+	align-self: flex-end;
+	width: 2rem;
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+	margin-right: 3rem;
+}
+
+.bodyNotes_Notes {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}

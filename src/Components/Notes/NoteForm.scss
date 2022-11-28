@@ -1,0 +1,34 @@
+@import "Styles/Colors.scss";
+
+.NoteForm {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 12rem;
+	align-items: center;
+}
+
+.NoteForm_title {
+	margin: 0;
+	margin-bottom: 1rem;
+}
+
+.NoteForm_form {
+	display: flex;
+	flex-direction: column;
+	height: 8rem;
+	width: 80%;
+	justify-content: space-between;
+}
+
+.NoteForm_form > input {
+	height: 1.8rem;
+	padding-left: 1rem;
+	border: solid #e7e7e7 1px;
+	border-radius: 7px;
+	outline: none;
+}
+
+.NoteForm_form > input:focus {
+	border: solid $color-purple 2px;
+}

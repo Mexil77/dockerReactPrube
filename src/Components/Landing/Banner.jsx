@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 
-import "./Banner.css";
+import "./Banner.scss";
 
 export default function Banner() {
 	const { isAuthenticated, user } = useAuth0();
@@ -14,8 +14,8 @@ export default function Banner() {
 					<h1>Bienvenido {isAuthenticated && user.given_name}</h1>
 					<p>Tu app para gestionar todas tus notas</p>
 					{isAuthenticated && (
-						<Link to={"/notes"}>
-							<button className="btn">Ir a notas</button>
+						<Link to={"/notes"} className="btn btn-banner">
+							Ir a notas
 						</Link>
 					)}
 				</div>
